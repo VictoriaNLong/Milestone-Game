@@ -1,8 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 body {
-    background: white;
+  background: white;
 }
 
-canvas {
-    border: 5px solid rgb(10, 81, 148);
- 
+#menu-container {
+  background-image: url("Assets/MenuScreen.png");
+  width: 576px;
+  height: 1024px;
+  border: 2px solid rgb(167, 156, 194);
+}
+
+#title {
+  margin: auto;
+  width: 251px;
+  padding: 60px;
+  font-size: 50px;
+  -webkit-text-stroke: 1px rgb(167, 156, 194);
+  filter: drop-shadow(5px 5px 4px rgb(167, 156, 194));
+  text-shadow: 3px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
+}
+
+#title span {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: block;
+  color: #fff;
+  animation: waviy 1.5s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
 }
