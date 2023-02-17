@@ -1,7 +1,8 @@
 body {
-    background: red;
+    background: white;
 }
 
 canvas {
-    background: white;
+    border: 5px solid rgb(10, 81, 148);
+ 
 }
