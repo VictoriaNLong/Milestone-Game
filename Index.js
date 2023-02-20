@@ -30,13 +30,36 @@ floorCollisions2D.forEach((across, y) => {
   });
 });
 
-console.log(collisionBlocks)
+const platCollisions2D = [];
+for (let i = 0; i < platCollisions.length; i += 72) {
+  platCollisions2D.push(platCollisions.slice(i, i + 72));
+}
+
+const platCollisionBlocks = [];
+platCollisions2D.forEach((across, y) => {
+  across.forEach((symbol, x) => {
+    if (symbol > 0) {
+      platCollisionBlocks.push(
+        new CollisionBlock({
+          position: {
+            x: x * 8,
+            y: y * 8,
+          },
+        })
+      );
+    }
+  });
+});
+
 
 const gravity = 0.3;
 
 const player = new Player({
-  x: 0,
-  y: 0,
+ position: {
+    x: 100,
+  y: 700,
+},
+  collisionBlocks, 
 });
 
 const keys = {
@@ -64,8 +87,12 @@ function animate() {
   c.save();
   c.scale(1.5, 1.5);
   c.translate(0, -background.image.height + scaledCanvas.height);
-  background.update();collisionBlocks.forEach(collisionBlock =>{
+  background.update();
+  collisionBlocks.forEach(collisionBlock =>{
     collisionBlock.update()
+  })
+  platCollisionBlocks.forEach(block =>{
+    block.update()
   })
   c.restore();
 
