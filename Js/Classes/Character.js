@@ -1,18 +1,33 @@
 class Player extends Sprite {
-  constructor({ position, collisionBlocks, imageSrc }) {
-    super({imageSrc})
+  constructor({ position, collisionBlocks, imageSrc, frameRate, scale = 1.5, animations }) {
+    super({imageSrc, frameRate, scale})
     this.position = position
     this.velocity = {
       x: 0,
       y: 1,
     };
     
-    this.width = 30;
-    this.height = 30;
     this.collisionBlocks = collisionBlocks
+    this.animations = animations
+    this.lastDirection = 'right'
+
+    for (let key in this.animations) {
+      const image = new Image()
+      image.src = this.animations[key].imageSrc
+
+      this.animations[key].image = image
+    }
+  }
+
+  spriteSwitch(key) {
+    if (this.image === this.animations[key] || !this.loaded) return
+    this.image = this.animations[key].image
+    this.frameSpeed = this.animations[key].frameSpeed
+    this.frameRate = this.animations[key].frameRate
   }
 
   update() {
+    this.updateFrame()
     this.draw();
     this.position.x += this.velocity.x;    
     this.checkForHorizontalCollisions()

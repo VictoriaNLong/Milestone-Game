@@ -57,10 +57,53 @@ const gravity = 0.3;
 const player = new Player({
  position: {
     x: 100,
-  y: 700,
+  y: 964,
 },
   collisionBlocks,
-  imageSrc:'Assets/FoxIdle.gif'
+  imageSrc:'Assets/FoxIdleSheet.png',
+  frameRate: 14,
+  animations: {
+    Idle: {
+      imageSrc:'Assets/FoxIdleSheet.png',
+      frameRate: 14,
+      frameSpeed: 10
+    },
+    IdleLeft: {
+      imageSrc:'Assets/FoxIdleLeftSheet.png',
+      frameRate: 14,
+      frameSpeed: 10
+    },
+    RunRight: {
+      imageSrc:'Assets/FoxRunSheet.png',
+      frameRate: 8,
+      frameSpeed: 5
+    },
+    RunLeft: {
+      imageSrc:'Assets/FoxRunLeftSheet.png',
+      frameRate: 8,
+      frameSpeed: 5
+    },
+    Jump: {
+      imageSrc:'Assets/FoxJumpStartSheet.png',
+      frameRate: 4,
+      frameSpeed: 10
+    },
+    JumpLeft: {
+      imageSrc:'Assets/FoxJumpLeftStartSheet.png',
+      frameRate: 4,
+      frameSpeed: 10
+    },
+    Land: {
+      imageSrc:'Assets/FoxJumpEndSheet.png',
+      frameRate: 7,
+      frameSpeed: 12
+    },
+    LandLeft: {
+      imageSrc:'Assets/FoxJumpLeftEndSheet.png',
+      frameRate: 7,
+      frameSpeed: 12
+    },
+  }
 });
 
 const keys = {
@@ -101,8 +144,29 @@ function animate() {
 
   player.update();
   player.velocity.x = 0;
-  if (keys.d.pressed) player.velocity.x = 3;
-  else if (keys.a.pressed) player.velocity.x = -3;
+  if (keys.d.pressed) {
+    player.spriteSwitch('RunRight')
+    player.velocity.x = 3
+    player.lastDirection = 'right'
+  } else if (keys.a.pressed) {
+    player.spriteSwitch('RunLeft')
+    player.velocity.x = -3
+    player.lastDirection = 'left'
+  } else if (player.velocity.y === 0) {
+    if (player.lastDirection === 'right') player.spriteSwitch('Idle')
+    else player.spriteSwitch('IdleLeft')
+    
+  }
+
+  if (player.velocity.y < 0) {
+    if (player.lastDirection === 'right') player.spriteSwitch('Jump')
+    else player.spriteSwitch('JumpLeft')
+  } else if (player.velocity.y > 0) {
+    if (player.lastDirection === 'right') player.spriteSwitch('Land')
+    else player.spriteSwitch('LandLeft')
+  }
+ 
+
 }
 
 animate();
