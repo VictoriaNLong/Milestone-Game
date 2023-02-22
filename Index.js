@@ -59,7 +59,8 @@ const player = new Player({
     x: 100,
   y: 700,
 },
-  collisionBlocks, 
+  collisionBlocks,
+  imageSrc:'Assets/FoxIdle.gif'
 });
 
 const keys = {
@@ -115,7 +116,7 @@ window.addEventListener("keydown", (event) => {
       keys.a.pressed = true;
       break;
     case "w":
-      player.velocity.y = -10;
+      player.velocity.y = -12;
       break;
   }
 });
