@@ -60,6 +60,7 @@ const player = new Player({
   y: 964,
 },
   collisionBlocks,
+  platCollisionBlocks,
   imageSrc:'Assets/FoxIdleSheet.png',
   frameRate: 14,
   animations: {
@@ -85,23 +86,23 @@ const player = new Player({
     },
     Jump: {
       imageSrc:'Assets/FoxJumpStartSheet.png',
-      frameRate: 4,
-      frameSpeed: 10
+      frameRate: 2,
+      frameSpeed: 20
     },
     JumpLeft: {
       imageSrc:'Assets/FoxJumpLeftStartSheet.png',
-      frameRate: 4,
-      frameSpeed: 10
+      frameRate: 2,
+      frameSpeed: 20
     },
     Land: {
       imageSrc:'Assets/FoxJumpEndSheet.png',
-      frameRate: 7,
-      frameSpeed: 12
+      frameRate: 3,
+      frameSpeed: 15
     },
     LandLeft: {
       imageSrc:'Assets/FoxJumpLeftEndSheet.png',
-      frameRate: 7,
-      frameSpeed: 12
+      frameRate: 3,
+      frameSpeed: 15
     },
   }
 });
