@@ -1,5 +1,5 @@
 class CollisionBlock {
-    constructor({position, }) {
+    constructor({position,}) {
         this.position = position
         this.width = 8
         this.height = 8
