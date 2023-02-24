@@ -1,6 +1,8 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 
+console.log(starCollect)
+
 canvas.width = 576;
 canvas.height = 1024;
 
@@ -25,6 +27,30 @@ floorCollisions2D.forEach((across, y) => {
   });
 });
 
+const starCollect2D = [];
+for (let i = 0; i < starCollect.length; i += 72) {
+  starCollect2D.push(starCollect.slice(i, i + 72));
+}
+
+const starBlocks = [];
+starCollect2D.forEach((across, y) => {
+  across.forEach((symbol, x) => {
+    if (symbol > 0) {
+      starBlocks.push(
+        new StarSprite({
+          position: {
+            x: x * 8,
+            y: y * 8
+          },
+          imageSrc: 'Assets/StarCollectSheet.png',
+          frameRate: 4,
+          frameSpeed: 15
+        })
+      );
+    }
+  });
+});
+
 const gravity = 0.3;
 
 const player = new Player({
@@ -39,7 +65,7 @@ const player = new Player({
     Idle: {
       imageSrc:'Assets/FoxIdleSheet.png',
       frameRate: 14,
-      frameSpeed: 10
+      frameSpeed: 15
     },
     IdleLeft: {
       imageSrc:'Assets/FoxIdleLeftSheet.png',
@@ -105,6 +131,14 @@ function animate() {
   background.update();
   collisionBlocks.forEach(collisionBlock =>{
     collisionBlock.update()
+  })
+
+  collisionBlocks.forEach(collisionBlock =>{
+    collisionBlock.update()
+  })
+
+  starBlocks.forEach(starBlock =>{
+    starBlock.update()
   })
   c.restore();
 
