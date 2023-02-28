@@ -2,6 +2,7 @@ const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 let collectedscore = document.querySelector("#collected");
 let winText = document.querySelector("#winner")
+let starText = document.querySelector("#score")
 
 canvas.width = 576;
 canvas.height = 1024;
@@ -177,8 +178,10 @@ function animate() {
    
 if (score === 9) {
   winText.style.display = "flex";
+  starText.style.display = "none";
 } else {
   winText.style.display = "none";
+  starText.style.display = "flex";
 }
 }
 
