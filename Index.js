@@ -116,7 +116,7 @@ const keys = {
 };
 
 
- let score = 0
+ let score = 1
 
 const background = new Sprite({
   position: {
@@ -175,7 +175,7 @@ function animate() {
     else player.spriteSwitch('LandLeft')
   }
    
-if (starBlocks === 8) {
+if (score === 9) {
   winText.style.display = "flex";
 } else {
   winText.style.display = "none";

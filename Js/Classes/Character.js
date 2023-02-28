@@ -153,7 +153,6 @@ class Player extends Sprite {
     })
       ) {
         starBlocks.splice(i, 1)
-        console.log(starBlocks)
         collectedscore.innerHTML = score
         score++
         
