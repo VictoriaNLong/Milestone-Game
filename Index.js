@@ -42,7 +42,7 @@ starCollect2D.forEach((across, y) => {
           },
           imageSrc: 'Assets/StarCollectSheet.png',
           frameRate: 4,
-          frameSpeed: 15
+          frameSpeed: 15,
         })
       );
     }

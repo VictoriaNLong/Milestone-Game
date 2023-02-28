@@ -38,16 +38,16 @@ class Player extends Sprite {
 
   update() {
     this.updateFrame()
-    c.fillStyle = 'rgba(0, 255, 0, 0.2)'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    // c.fillStyle = 'rgba(0, 255, 0, 0.2)'
+    // c.fillRect(this.position.x, this.position.y, this.width, this.height)
 
-    c.fillStyle = 'rgba(255, 0, 0, 0.2)'
-    c.fillRect(
-      this.hitbox.position.x,
-      this.hitbox.position.y,
-      this.hitbox.width,
-      this.hitbox.height
-    )
+    // c.fillStyle = 'rgba(255, 0, 0, 0.2)'
+    // c.fillRect(
+    //   this.hitbox.position.x,
+    //   this.hitbox.position.y,
+    //   this.hitbox.width,
+    //   this.hitbox.height
+    // )
 
     this.draw();
     this.position.x += this.velocity.x;   
@@ -143,11 +143,18 @@ class Player extends Sprite {
   }
 
   starCollect() {
-    if (
-      collision ({
+    for (let i = 0; i < this.starBlocks.length; i++) {
+      const starBlock = this.starBlocks[i];
+
+      if ( 
+      collision({
       object1: this.hitbox,
-      object2: starBlocks
+      object2: starBlock,
     })
-    ) console.log('touching')
+      ) {
+        console.log('touching')
+        starBlocks.splice(i, 1)
   }
+}
+}
 }
