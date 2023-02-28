@@ -11,7 +11,6 @@ canvas {
   margin-right: auto;
   display: block;
   width: 800px;
-  height: 1024;
   border: solid #7faeac;
   
 }
@@ -19,7 +18,7 @@ canvas {
 #score {
   font-family: "Press Start 2P", cursive;
   font-size: 30px;
-  color: #f0d2e2;
+  color: #f5e8cc;
   text-shadow: 2px 2px 0px #9058b6, 
     4px 4px 0px #7faeac; 
   display: flex;
@@ -31,27 +30,27 @@ canvas {
   
 }
 
-#winner { 
-  position: fixed;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  width: 50%;
+#winner {
   font-family: "Press Start 2P", cursive;
-  font-size: 200px;
-  color: #ebf0d2;
+  font-size: 90px;
+  color: #f5e8cc;
   text-shadow: 2px 2px 0px #9058b6, 
     4px 4px 0px #7faeac; 
-   
-  /* animation: bounce .5s;
+    height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  justify-content: center;
+  top: 40%;
+ left: 0;
+  right: 0;
+  animation: bounce 1s;
     animation-direction: alternate;
-    animation-iteration-count: infinite; */
+    animation-iteration-count: infinite;
 }
 
-/* @keyframes bounce {
+@keyframes bounce {
+  
   from {transform: translateY(-30px);} 
   to {transform: translateY(-15px);} 
-}  */
+} 
