@@ -152,8 +152,11 @@ class Player extends Sprite {
       object2: starBlock,
     })
       ) {
-        console.log('touching')
         starBlocks.splice(i, 1)
+        console.log(starBlocks)
+        collectedscore.innerHTML = score
+        score++
+        
   }
 }
 }

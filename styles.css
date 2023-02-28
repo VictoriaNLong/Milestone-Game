@@ -29,3 +29,25 @@ canvas {
   right: 0;
   
 }
+
+#winner {
+  font-family: "Press Start 2P", cursive;
+  font-size: 90px;
+  color: #f5e8cc;
+  text-shadow: 2px 2px 0px #9058b6, 
+    4px 4px 0px #7faeac; 
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  top: 40%;
+ left: 0;
+  right: 0;
+  animation: bounce .5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {transform: translateY(-30px);} 
+  to {transform: translateY(-15px);} 
+} 

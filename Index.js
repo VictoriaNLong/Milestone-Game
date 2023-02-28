@@ -1,5 +1,7 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
+let collectedscore = document.querySelector("#collected");
+let winText = document.querySelector("#winner")
 
 canvas.width = 576;
 canvas.height = 1024;
@@ -113,6 +115,9 @@ const keys = {
   },
 };
 
+
+ let score = 0
+
 const background = new Sprite({
   position: {
     x: 0,
@@ -121,8 +126,9 @@ const background = new Sprite({
   imageSrc: "Assets/Background.png",
 });
 
+let animationID
 function animate() {
-  window.requestAnimationFrame(animate);
+ animationId = window.requestAnimationFrame(animate);
   c.fillStyle = "white";
   c.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -143,7 +149,7 @@ function animate() {
   
   c.restore();
 
-  
+ 
 
   player.update();
   player.velocity.x = 0;
@@ -168,10 +174,17 @@ function animate() {
     if (player.lastDirection === 'right') player.spriteSwitch('Land')
     else player.spriteSwitch('LandLeft')
   }
- 
+   
+if (starBlocks === 8) {
+  winText.style.display = "flex";
+} else {
+  winText.style.display = "none";
+}
 }
 
 animate();
+
+
 
 window.addEventListener("keydown", (event) => {
   switch (event.key) {
@@ -197,3 +210,5 @@ window.addEventListener("keyup", (event) => {
       break;
   }
 });
+
+
