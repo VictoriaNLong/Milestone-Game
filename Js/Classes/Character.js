@@ -1,5 +1,5 @@
 class Player extends Sprite {
-  constructor({ position, collisionBlocks, imageSrc, frameRate, scale = 1, animations }) {
+  constructor({ position, collisionBlocks, starBlocks, imageSrc, frameRate, scale = 1, animations }) {
     super({imageSrc, frameRate, scale})
     this.position = position
     this.velocity = {
@@ -8,6 +8,7 @@ class Player extends Sprite {
     };
     
     this.collisionBlocks = collisionBlocks
+    this.starBlocks = starBlocks
     this.hitbox = {
       position: {
         x: this.position.x,
@@ -55,6 +56,7 @@ class Player extends Sprite {
     this.applyGravity();
     this.updateHitbox() 
     this.checkForVerticalCollisions();
+    this.starCollect()
   }
 
   updateHitbox() {
@@ -138,5 +140,14 @@ class Player extends Sprite {
       }
     }
     
+  }
+
+  starCollect() {
+    if (
+      collision ({
+      object1: this.hitbox,
+      object2: starBlocks
+    })
+    ) console.log('touching')
   }
 }

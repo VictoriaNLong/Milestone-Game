@@ -1,8 +1,6 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 
-console.log(starCollect)
-
 canvas.width = 576;
 canvas.height = 1024;
 
@@ -37,7 +35,7 @@ starCollect2D.forEach((across, y) => {
   across.forEach((symbol, x) => {
     if (symbol > 0) {
       starBlocks.push(
-        new StarSprite({
+        new Sprite({
           position: {
             x: x * 8,
             y: y * 8
@@ -59,6 +57,7 @@ const player = new Player({
   y: 964,
 },
   collisionBlocks,
+  starBlocks,
   imageSrc:'Assets/FoxIdleSheet.png',
   frameRate: 14,
   animations: {
@@ -140,6 +139,8 @@ function animate() {
   starBlocks.forEach(starBlock =>{
     starBlock.update()
   })
+
+  
   c.restore();
 
   
@@ -168,7 +169,6 @@ function animate() {
     else player.spriteSwitch('LandLeft')
   }
  
-
 }
 
 animate();
