@@ -137,7 +137,7 @@ const backgroundImageHeight = 1024
 const camera = {
   position: {
     x: 0,
-    y: -backgroundImageHeight,
+    y: -backgroundImageHeight + scaledCanvas.height,
   },
 }
 
@@ -149,7 +149,7 @@ function animate() {
 
   c.save();
   c.scale(2, 2)
-  c.translate(camera.position.x, -background.image.height + scaledCanvas.height)
+  c.translate(camera.position.x, camera.position.y )
   background.update();
   collisionBlocks.forEach((collisionBlock) =>{
     collisionBlock.update()
@@ -180,7 +180,7 @@ function animate() {
   }
 
   if (player.velocity.y < 0) {
-    // player.cameraPanD()
+    player.cameraPanDown({canvas, camera})
     if (player.lastDirection === 'right') player.spriteSwitch('Jump')
     else player.spriteSwitch('JumpLeft')
   } else if (player.velocity.y > 0) {

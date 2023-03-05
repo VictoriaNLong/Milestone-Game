@@ -48,10 +48,10 @@ class Player extends Sprite {
     this.camerabox = {
       position: {
         x: this.position.x - 80,
-        y: this.position.y - 50,
+        y: this.position.y - 250,
       },
       width: 200,
-      height: 100,
+      height: 300,
     }
   }
   
@@ -79,6 +79,14 @@ class Player extends Sprite {
     camera.position.x -= this.velocity.x
    }
   }
+
+  cameraPanDown ({canvas, camera}){
+    // if (this.camerabox.position.x <=0) return
+ 
+    if (this.camerabox.position.y <= Math.abs(camera.position.y)) {
+     camera.position.y -= this.velocity.y
+    }
+   }
 
   update() {
     this.updateFrame()
