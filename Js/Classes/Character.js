@@ -47,10 +47,10 @@ class Player extends Sprite {
   updateCameraBox() {
     this.camerabox = {
       position: {
-        x: this.position.x - 80,
-        y: this.position.y - 250,
+        x: this.position.x - 120,
+        y: this.position.y - 230,
       },
-      width: 200,
+      width: 300,
       height: 300,
     }
   }
@@ -81,9 +81,17 @@ class Player extends Sprite {
   }
 
   cameraPanDown ({canvas, camera}){
-    // if (this.camerabox.position.x <=0) return
+    if (this.camerabox.position.y + this.velocity.y <=0) return
  
     if (this.camerabox.position.y <= Math.abs(camera.position.y)) {
+     camera.position.y -= this.velocity.y
+    }
+   }
+
+   cameraPanUp ({canvas, camera}){
+    if (this.camerabox.position.y + this.camerabox.height + this.velocity.y >= 1024) return
+ 
+    if (this.camerabox.position.y + this.camerabox.height >= Math.abs(camera.position.y) + canvas.height / 2) {
      camera.position.y -= this.velocity.y
     }
    }

@@ -5,7 +5,7 @@ let winText = document.querySelector("#winner")
 let starText = document.querySelector("#score")
 
 canvas.width = 576;
-canvas.height = 1024;
+canvas.height = 900;
 
 const scaledCanvas = {
   width: canvas.width / 2,
@@ -184,6 +184,7 @@ function animate() {
     if (player.lastDirection === 'right') player.spriteSwitch('Jump')
     else player.spriteSwitch('JumpLeft')
   } else if (player.velocity.y > 0) {
+    player.cameraPanUp ({canvas, camera})
     if (player.lastDirection === 'right') player.spriteSwitch('Land')
     else player.spriteSwitch('LandLeft')
   }
