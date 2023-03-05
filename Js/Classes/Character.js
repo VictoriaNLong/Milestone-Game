@@ -32,7 +32,7 @@ class Player extends Sprite {
         y: this.position.y,
       },
       width: 200,
-      height: 500,
+      height: 100,
     }
   }
 
@@ -47,19 +47,19 @@ class Player extends Sprite {
   updateCameraBox() {
     this.camerabox = {
       position: {
-        x: this.position.x - 120,
-        y: this.position.y - 250,
+        x: this.position.x - 80,
+        y: this.position.y - 50,
       },
-      width: 300,
-      height: 300,
+      width: 200,
+      height: 100,
     }
   }
   
-  cameraPanDown (){
-    const cameraboxTop = this.camerabox.position.y + this.camerabox.height
+  cameraPanLeft ({canvas, camera}){
+    const cameraboxRight = this.camerabox.position.x + this.camerabox.width
 
-    if (cameraboxTop >= canvas.height) {
-      console.log('Translate down')
+    if (cameraboxRight >= canvas.width / 2) {
+      camera.position.x -= this.velocity.x
     }
   }
 

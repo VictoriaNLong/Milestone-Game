@@ -132,14 +132,14 @@ const background = new Sprite({
   imageSrc: "Assets/Background.png",
 });
 
-// const backgroundImageHeight = 1024
+const backgroundImageHeight = 1024
 
-// const camera = {
-//   position: {
-//     x: 0,
-//     y: -backgroundImageHeight,
-//   },
-// }
+const camera = {
+  position: {
+    x: 0,
+    y: -backgroundImageHeight,
+  },
+}
 
 let animationID
 function animate() {
@@ -149,31 +149,24 @@ function animate() {
 
   c.save();
   c.scale(2, 2)
-  c.translate(0, -background.image.height + scaledCanvas.height)
+  c.translate(camera.position.x, -background.image.height + scaledCanvas.height)
   background.update();
-  collisionBlocks.forEach(collisionBlock =>{
+  collisionBlocks.forEach((collisionBlock) =>{
     collisionBlock.update()
   })
 
-  collisionBlocks.forEach(collisionBlock =>{
-    collisionBlock.update()
-  })
-
-  starBlocks.forEach(starBlock =>{
+  starBlocks.forEach((starBlock) =>{
     starBlock.update()
   })
 
-  
-  c.restore();
-
- 
-
   player.update();
+
   player.velocity.x = 0;
   if (keys.d.pressed) {
     player.spriteSwitch('RunRight')
     player.velocity.x = 3
     player.lastDirection = 'right'
+    player.cameraPanLeft({canvas, camera})
   } else if (keys.a.pressed) {
     player.spriteSwitch('RunLeft')
     player.velocity.x = -3
@@ -185,7 +178,7 @@ function animate() {
   }
 
   if (player.velocity.y < 0) {
-    player.cameraPanDown()
+    // player.cameraPanD()
     if (player.lastDirection === 'right') player.spriteSwitch('Jump')
     else player.spriteSwitch('JumpLeft')
   } else if (player.velocity.y > 0) {
@@ -193,13 +186,18 @@ function animate() {
     else player.spriteSwitch('LandLeft')
   }
    
-if (score === 9) {
+
+  c.restore();
+
+ if (score === 9) {
   winText.style.display = "flex";
   starText.style.display = "none";
 } else {
   winText.style.display = "none";
   starText.style.display = "flex";
 }
+
+  
 }
 
 animate();
