@@ -171,6 +171,7 @@ function animate() {
     player.spriteSwitch('RunLeft')
     player.velocity.x = -3
     player.lastDirection = 'left'
+    player.cameraPanRight({canvas, camera})
   } else if (player.velocity.y === 0) {
     if (player.lastDirection === 'right') player.spriteSwitch('Idle')
     else player.spriteSwitch('IdleLeft')

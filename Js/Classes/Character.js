@@ -55,12 +55,23 @@ class Player extends Sprite {
     }
   }
   
+  
   cameraPanLeft ({canvas, camera}){
     const cameraboxRight = this.camerabox.position.x + this.camerabox.width
 
-    if (cameraboxRight >= canvas.width / 2) {
+    if (cameraboxRight >= 576) return
+
+    if (cameraboxRight >= canvas.width / 2 + Math.abs(camera.position.x)) {
       camera.position.x -= this.velocity.x
     }
+  }
+
+  cameraPanRight ({canvas, camera}){
+   if (this.camerabox.position.x <=0) return
+
+   if (this.camerabox.position.x <= Math.abs(camera.position.x)) {
+    camera.position.x -= this.velocity.x
+   }
   }
 
   update() {
