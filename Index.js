@@ -7,6 +7,11 @@ let starText = document.querySelector("#score")
 canvas.width = 576;
 canvas.height = 1024;
 
+const scaledCanvas = {
+  width: canvas.width / 2,
+  height: canvas.height / 2
+}
+
 const floorCollisions2D = [];
 for (let i = 0; i < floorCollisions.length; i += 72) {
   floorCollisions2D.push(floorCollisions.slice(i, i + 72));
@@ -127,6 +132,15 @@ const background = new Sprite({
   imageSrc: "Assets/Background.png",
 });
 
+// const backgroundImageHeight = 1024
+
+// const camera = {
+//   position: {
+//     x: 0,
+//     y: -backgroundImageHeight,
+//   },
+// }
+
 let animationID
 function animate() {
  animationId = window.requestAnimationFrame(animate);
@@ -134,6 +148,8 @@ function animate() {
   c.fillRect(0, 0, canvas.width, canvas.height);
 
   c.save();
+  c.scale(2, 2)
+  c.translate(0, -background.image.height + scaledCanvas.height)
   background.update();
   collisionBlocks.forEach(collisionBlock =>{
     collisionBlock.update()
@@ -169,6 +185,7 @@ function animate() {
   }
 
   if (player.velocity.y < 0) {
+    player.cameraPanDown()
     if (player.lastDirection === 'right') player.spriteSwitch('Jump')
     else player.spriteSwitch('JumpLeft')
   } else if (player.velocity.y > 0) {

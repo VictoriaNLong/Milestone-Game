@@ -26,6 +26,14 @@ class Player extends Sprite {
 
       this.animations[key].image = image
     }
+    this.camerabox = {
+      position: {
+        x: this.position.x,
+        y: this.position.y,
+      },
+      width: 200,
+      height: 500,
+    }
   }
 
   spriteSwitch(key) {
@@ -36,8 +44,36 @@ class Player extends Sprite {
     this.frameRate = this.animations[key].frameRate
   }
 
+  updateCameraBox() {
+    this.camerabox = {
+      position: {
+        x: this.position.x - 120,
+        y: this.position.y - 250,
+      },
+      width: 300,
+      height: 300,
+    }
+  }
+  
+  cameraPanDown (){
+    const cameraboxTop = this.camerabox.position.y + this.camerabox.height
+
+    if (cameraboxTop >= canvas.height) {
+      console.log('Translate down')
+    }
+  }
+
   update() {
     this.updateFrame()
+    this.updateCameraBox()
+     c.fillStyle = 'rgba(255, 0, 0, 0.2)'
+    c.fillRect(
+      this.camerabox.position.x,
+      this.camerabox.position.y,
+      this.camerabox.width,
+      this.camerabox.height
+    )
+
     // c.fillStyle = 'rgba(0, 255, 0, 0.2)'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
 
@@ -63,10 +99,10 @@ class Player extends Sprite {
     this.hitbox = {
       position: {
         x: this.position.x + 8,
-        y: this.position.y + 6,
+        y: this.position.y + 5,
       },
       width: 21,
-      height: 20,
+      height: 19,
     }
   }
 
