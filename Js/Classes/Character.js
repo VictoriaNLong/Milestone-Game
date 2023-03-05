@@ -55,7 +55,13 @@ class Player extends Sprite {
     }
   }
   
-  
+  horizontalCanvasCollision(){
+    if (this.hitbox.position.x + this.hitbox.width + this.velocity.x >= 576 || 
+      this.hitbox.position.x + this.velocity.x <= 0) {
+      this.velocity.x = 0
+    }
+  }
+
   cameraPanLeft ({canvas, camera}){
     const cameraboxRight = this.camerabox.position.x + this.camerabox.width
 

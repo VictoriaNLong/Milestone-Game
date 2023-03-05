@@ -159,6 +159,7 @@ function animate() {
     starBlock.update()
   })
 
+  player.horizontalCanvasCollision()
   player.update();
 
   player.velocity.x = 0;
