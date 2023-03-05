@@ -99,13 +99,13 @@ class Player extends Sprite {
   update() {
     this.updateFrame()
     this.updateCameraBox()
-     c.fillStyle = 'rgba(255, 0, 0, 0.2)'
-    c.fillRect(
-      this.camerabox.position.x,
-      this.camerabox.position.y,
-      this.camerabox.width,
-      this.camerabox.height
-    )
+    //  c.fillStyle = 'rgba(255, 0, 0, 0.2)'
+    // c.fillRect(
+    //   this.camerabox.position.x,
+    //   this.camerabox.position.y,
+    //   this.camerabox.width,
+    //   this.camerabox.height
+    // )
 
     // c.fillStyle = 'rgba(0, 255, 0, 0.2)'
     // c.fillRect(this.position.x, this.position.y, this.width, this.height)
