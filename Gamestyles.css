@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 body {
-  background: #41254d;
+  background: #000000;
 }
 
 #help-button {
   position: fixed;
- display: flex;
- width: 100px;
- height: 50px;
- margin-top: 10px;
- margin-left: 5px;
+  display: flex;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 5px;
   z-index: 10;
   cursor: pointer;
   text-align: center;
@@ -19,22 +19,20 @@ body {
   color: #f5e8cc;
   background: none;
   border: none;
-  text-shadow: 2px 2px 0px #9058b6, 
-    4px 4px 0px #7faeac; 
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
 }
 
 #help-menu {
   display: block;
   position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- width: 500px;
- max-width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 80%;
   z-index: 10;
   border: 5px solid #7faeac;
-  background: rgba(169, 139, 187, 0.5)
-
+  background: rgba(169, 139, 187, 0.5);
 }
 
 #menu-header {
@@ -43,12 +41,11 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #f5e8cc;
-  text-shadow: 2px 2px 0px #9058b6, 
-    4px 4px 0px #7faeac; 
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 5px dashed #7faeac ;
+  border-bottom: 5px dashed #7faeac;
 }
 
 #close-menu {
@@ -67,8 +64,7 @@ body {
   font-family: "Press Start 2P", cursive;
   font-size: 16px;
   color: #f5e8cc;
-  text-shadow: 2px 2px 0px #9058b6, 
-    4px 4px 0px #7faeac; 
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -88,18 +84,16 @@ body {
 
 canvas {
   border: solid #7faeac;
-  
 }
 
 #score {
   font-family: "Press Start 2P", cursive;
   font-size: 30px;
   color: #f5e8cc;
-  text-shadow: 2px 2px 0px #9058b6, 
-    4px 4px 0px #7faeac; 
-    width: 576px;
-    display: flex;
-    justify-content: center;
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
+  width: 576px;
+  display: flex;
+  justify-content: center;
   position: fixed;
 }
 
@@ -107,43 +101,44 @@ canvas {
   font-family: "Press Start 2P", cursive;
   font-size: 70px;
   color: #f5e8cc;
-  text-shadow: 2px 2px 0px #9058b6, 
-    4px 4px 0px #7faeac; 
-    width: 576px;
-    display: flex;
-    justify-content: center;
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
+  width: 576px;
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 40%;
 
   animation: bounce 1s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce {
-  
-  from {transform: translateY(-30px);} 
-  to {transform: translateY(-15px);} 
-} 
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
 
 #playMusic {
   font-family: "Press Start 2P", cursive;
-font-size: 20px;
-color: #f5e8cc;
-cursor: pointer;
-text-shadow: 2px 2px 0px #9058b6, 
-  4px 4px 0px #7faeac; 
+  font-size: 20px;
+  color: #f5e8cc;
+  cursor: pointer;
+  text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
   width: 576px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-position: fixed;
-margin-top: 20px;
-left: 50%;
-padding-left: 470px;
-transform: translate(-50%, -50%);
-max-width: 80%;
-background: none;
-border: none;
+  position: fixed;
+  margin-top: 20px;
+  left: 50%;
+  padding-left: 470px;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  background: none;
+  border: none;
 }
