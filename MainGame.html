@@ -2,54 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-   
+    <link rel="stylesheet" href="Gamestyles.css" />
+
     <title>Star Reach Game</title>
   </head>
   <body>
-    <a href="Index.html">
-    <button>test</button></a>
+    <button id="playMusic" onclick="pause()">Music</button>
+    <audio autoplay loop id="music">
+      <source src="Assets/LunarSky.mp3" type="audio/mpeg" />
+    </audio>
     <div id="help-menu">
       <div id="menu-header">
-      <div id="title">HOW TO</div>
-      <button id="close-menu" onclick="hideMenu()">&times;</button>
+        <div id="title">HOW TO</div>
+        <button id="close-menu" onclick="hideMenu()">&times;</button>
       </div>
       <div id="menu-body">
         <span>COLLECT ALL 8 STARS TO WIN</span>
         <span>A: LEFT</span>
-        <span>D: RIGHT</span> 
-        <span>W: JUMP</span> 
-        <span>*TRY DOUBLE JUMPING*</span> 
+        <span>D: RIGHT</span>
+        <span>W: JUMP</span>
+        <span>*TRY DOUBLE JUMPING*</span>
       </div>
     </div>
 
     <div id="game-area">
-     <button id="help-button" onclick="showMenu()">HELP</button> 
-    <div id="score">
-      <p>
-        <span>STARS:</span><span id="collected">0</span><span>/8</span>
-      </p>
-    </div>
-    <div id="winner">
-      <p>
-      <span>YOU</span>
-      <span>WIN!</span>
-    </p>
-    </div>
+      <button id="help-button" onclick="showMenu()">HELP</button>
+      <div id="score">
+        <p><span>STARS:</span><span id="collected">0</span><span>/8</span></p>
+      </div>
+      <div id="winner">
+        <p>
+          <span>YOU</span>
+          <span>WIN!</span>
+        </p>
+      </div>
 
-      <canvas></canvas>
-    
+      <canvas id="game-canvas"></canvas>
     </div>
   </body>
-  
-  
-<script src="./Js/Classes/CollisionBlocks.js"></script>
+
+  <script src="./Js/Classes/CollisionBlocks.js"></script>
   <script src="./Js/Classes/Sprite.js"></script>
   <script src="./Js/Classes/Character.js"></script>
   <script src="./Js/Data/utils.js"></script>
   <script src="./Js/Data/Collisions.js"></script>
 
-
-   <script src="Index.js"></script>
-   
+  <script src="./Js/Data/Audio.js"></script>
+  <script src="Audio.js"></script>
 </html>

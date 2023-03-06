@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 body {
-  background: black;
+  background: #41254d;
 }
 
 #help-button {
@@ -125,3 +125,25 @@ canvas {
   from {transform: translateY(-30px);} 
   to {transform: translateY(-15px);} 
 } 
+
+#playMusic {
+  font-family: "Press Start 2P", cursive;
+font-size: 20px;
+color: #f5e8cc;
+cursor: pointer;
+text-shadow: 2px 2px 0px #9058b6, 
+  4px 4px 0px #7faeac; 
+  width: 576px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+position: fixed;
+margin-top: 20px;
+left: 50%;
+padding-left: 470px;
+transform: translate(-50%, -50%);
+max-width: 80%;
+background: none;
+border: none;
+}

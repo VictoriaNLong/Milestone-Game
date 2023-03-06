@@ -1,4 +1,4 @@
-const canvas = document.querySelector("canvas");
+const canvas = document.querySelector("#game-canvas");
 const c = canvas.getContext("2d");
 let collectedscore = document.querySelector("#collected");
 let winText = document.querySelector("#winner")
@@ -164,8 +164,8 @@ const camera = {
 let animationID
 function animate() {
  animationId = window.requestAnimationFrame(animate);
-  c.fillStyle = "white";
-  c.fillRect(0, 0, canvas.width, canvas.height);
+//   c.fillStyle = "white";
+//   c.fillRect(0, 0, canvas.width, canvas.height);
 
   c.save();
   c.scale(2, 2)
@@ -251,5 +251,4 @@ window.addEventListener("keyup", (event) => {
       break;
   }
 });
-
 
