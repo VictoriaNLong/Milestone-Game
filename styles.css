@@ -4,12 +4,89 @@ body {
   background: black;
 }
 
-canvas {
+#help-button {
+  position: fixed;
+ display: flex;
+ width: 100px;
+ height: 50px;
+ margin-top: 10px;
+ margin-left: 5px;
+  z-index: 10;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  color: #f5e8cc;
+  background: none;
+  border: none;
+  text-shadow: 2px 2px 0px #9058b6, 
+    4px 4px 0px #7faeac; 
+}
+
+#help-menu {
+  display: block;
+  position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 500px;
+ max-width: 80%;
+  z-index: 10;
+  border: 5px solid #7faeac;
+  background: rgba(169, 139, 187, 0.5)
+
+}
+
+#menu-header {
+  padding: 10px 5px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f5e8cc;
+  text-shadow: 2px 2px 0px #9058b6, 
+    4px 4px 0px #7faeac; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px dashed #7faeac ;
+}
+
+#close-menu {
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  border: 2px solid #7faeac;
+  outline: none;
+  background-color: #f5e8cc;
+  margin: 2%;
+  font-weight: bold;
+  color: #9058b6;
+}
+
+#menu-body {
+  padding: 10px 5px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  color: #f5e8cc;
+  text-shadow: 2px 2px 0px #9058b6, 
+    4px 4px 0px #7faeac; 
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+#game-area {
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: flex;
+  width: 576px;
+}
+
+canvas {
   border: solid #7faeac;
   
 }
@@ -20,29 +97,24 @@ canvas {
   color: #f5e8cc;
   text-shadow: 2px 2px 0px #9058b6, 
     4px 4px 0px #7faeac; 
-  display: flex;
+    width: 576px;
+    display: flex;
+    justify-content: center;
   position: fixed;
-  justify-content: center;
-  top: 0;
- left: 0;
-  right: 0;
-  
 }
 
 #winner {
   font-family: "Press Start 2P", cursive;
-  font-size: 90px;
+  font-size: 70px;
   color: #f5e8cc;
   text-shadow: 2px 2px 0px #9058b6, 
     4px 4px 0px #7faeac; 
-    height: auto;
-  display: flex;
-  flex-wrap: wrap;
+    width: 576px;
+    display: flex;
+    justify-content: center;
   position: fixed;
-  justify-content: center;
   top: 40%;
- left: 0;
-  right: 0;
+
   animation: bounce 1s;
     animation-direction: alternate;
     animation-iteration-count: infinite;

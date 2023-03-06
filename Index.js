@@ -4,6 +4,26 @@ let collectedscore = document.querySelector("#collected");
 let winText = document.querySelector("#winner")
 let starText = document.querySelector("#score")
 
+let helpMenu = document.getElementById("help-menu") 
+
+function hideMenu() {
+  
+if (helpMenu.style.display = "block") {
+  helpMenu.style.display = "none"
+} else {
+  helpMenu.style.display = "block"
+}
+}
+
+function showMenu() {
+  
+  if (helpMenu.style.display = "none") {
+    helpMenu.style.display = "block"
+  } else {
+    helpMenu.style.display = "none"
+  }
+  }
+
 canvas.width = 576;
 canvas.height = 900;
 

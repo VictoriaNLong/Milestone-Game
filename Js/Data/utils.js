@@ -6,3 +6,4 @@ function collision({ object1, object2 }) {
     object1.position.x + object1.width >= object2.position.x
   )
 }
+
