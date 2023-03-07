@@ -7,10 +7,10 @@
     <title>Star Reach Game</title>
   </head>
   <body>
-    <button id="playMusic" onclick="pause()">Music</button>
-    <audio autoplay loop id="game-music">
-      <source src="Assets/LunarSky.mp3" type="audio/mpeg" />
-    </audio>
+    <audio autoplay loop id="bgm" src="Assets/LunarSky.mp3"></audio>
+    <div>
+        <button id="music" onclick="document.getElementById('bgm').muted=!document.getElementById('bgm').muted">MUSIC</button>
+    </div>
     <div id="help-menu">
       <div id="menu-header">
         <div id="title">HOW TO</div>
@@ -40,13 +40,13 @@
       <canvas id="game-canvas"></canvas>
     </div>
   </body>
-
+<script src="Audio.js"></script>
   <script src="./Js/Classes/CollisionBlocks.js"></script>
   <script src="./Js/Classes/Sprite.js"></script>
   <script src="./Js/Classes/Character.js"></script>
   <script src="./Js/Data/utils.js"></script>
   <script src="./Js/Data/Collisions.js"></script>
-  <script src="Audio.js"></script>
+  
   <script src="Game.js"></script>
   
 </html>
