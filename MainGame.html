@@ -7,10 +7,7 @@
     <title>Star Reach Game</title>
   </head>
   <body>
-    <audio autoplay loop id="bgm" src="Assets/LunarSky.mp3"></audio>
-    <div>
-        <button id="music" onclick="document.getElementById('bgm').muted=!document.getElementById('bgm').muted">MUSIC</button>
-    </div>
+    
     <div id="help-menu">
       <div id="menu-header">
         <div id="title">HOW TO</div>
@@ -27,6 +24,10 @@
 
     <div id="game-area">
       <button id="help-button" onclick="showMenu()">HELP</button>
+      <audio autoplay loop id="bgm" src="Assets/LunarSky.mp3"></audio>
+    <div>
+        <button id="music" onclick="document.getElementById('bgm').muted=!document.getElementById('bgm').muted">MUSIC</button>
+    </div>
       <div id="score">
         <p><span>STARS:</span><span id="collected">0</span><span>/8</span></p>
       </div>

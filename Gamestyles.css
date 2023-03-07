@@ -128,16 +128,14 @@ canvas {
   color: #f5e8cc;
   cursor: pointer;
   text-shadow: 2px 2px 0px #9058b6, 4px 4px 0px #7faeac;
-  width: 576px;
-  z-index: 11;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   position: fixed;
   margin-top: 20px;
-  left: 50%;
-  padding-left: 470px;
+  left: 62%;
   transform: translate(-50%, -50%);
   max-width: 80%;
   background: none;
