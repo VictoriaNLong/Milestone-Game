@@ -158,6 +158,8 @@ const camera = {
   },
 };
 
+
+
 let animationID;
 function animate() {
   animationId = window.requestAnimationFrame(animate);
@@ -166,6 +168,7 @@ function animate() {
 
   c.save();
   c.scale(2, 2);
+  c.imageSmoothingEnabled = false;
   c.translate(camera.position.x, camera.position.y);
   background.update();
   collisionBlocks.forEach((collisionBlock) => {
